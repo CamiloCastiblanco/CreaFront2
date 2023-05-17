@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="JoinSala.css">
+    <title>Let´s Draw</title>
+    <div align="center"><img id="logo" src="logoEdit.jpg" /></div>
+    <script src="/CreateSala.js"></script>
+    <script language="javascript">
+      //VALIDACION CHECKBOX
+      function validacion(formu, obj) {
+        limite=1; //limite de checks a seleccionar
+        num=0;
+        if (obj.checked) {
+          for (i=0; ele=document.getElementById(formu).children[i]; i++)
+            if (ele.checked) num++;
+        if (num>limite)
+          obj.checked=false;
+        }
+      }  
+      </script>
+  </head>
+  <body>
+      <div class="centrado">
+       <!-- <label>Nombre :</label>-->
+        <input id="Nombre" class="Nombre" placeholder="Nombre" required="required">
+      </div>
+      <div class="centrado">
+        <!--<label>Jugadores :</label>-->
+        <input class="Numj" id="numJ" placeholder="Jugadores (max 10)" type="number" min="0" max="10" required="required">
+      </div>
+      <div class="centrado">
+        <label>Lenguaje :</label>
+        <select name="Lenguaje" id="Lenguaje">
+          <option value="Español">Español</option>
+          <option value="Ingles">Ingles</option>
+        </select>
+      </div>
+      <div id="form2" class="centrado">
+        <input type="checkbox" name="Español" onchange="validacion('form2', this)" value="Privado" id="priv"/>
+        <label>Privado</label>
+        <input type="checkbox" name="Ingles" onchange="validacion('form2', this)" value="Publico" id="pub"/>
+        <label>Publico</label>
+        </div>
+      <div class="centrado">
+        <button onclick="CreateSala()" >CREAR</button>
+      </div>
+  </body>
+</html>
