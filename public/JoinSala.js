@@ -5,7 +5,7 @@ async function JoinSala() {
     console.log(response);
     var skin = localStorage.getItem("skin");
     var nombre =localStorage.getItem("usuario");
-    var response2 = await  fetch(`https://lets-draw-back.herokuapp.com/addUser/` + nombre + '/' + skin+'/'+response).then((res) => {
+    var response2 = await  fetch(`http://20.14.146.108:8081/addUser/` + nombre + '/' + skin+'/'+response).then((res) => {
         if (!res.ok)
             throw new Error("Response is NOT ok");
         console.log(res);
@@ -14,6 +14,6 @@ async function JoinSala() {
     }
     );
     console.log(response2);
-    window.location.replace("https://lets-draw-front.herokuapp.com/Partida.html?id="+response);
+    window.location.replace("20.114.249.107/Partida.html?id="+response);
 }
 

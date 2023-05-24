@@ -1,7 +1,7 @@
 async function getRooms() 
 {
     //Roomsjson() ;
-    var response=    await  fetch(`https://lets-draw-back.herokuapp.com/rooms`).then((res)=>{
+    var response=    await  fetch(`http://20.14.146.108:8081/rooms`).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
@@ -50,6 +50,6 @@ async function myFunction(x) {
         return res;
     }
     );
-  window.location.replace("https://lets-draw-front.herokuapp.com/Partida.html?id="+x);
+  window.location.replace("20.114.249.107/Partida.html?id="+x);
 }
 
