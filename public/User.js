@@ -9,7 +9,7 @@ async function CreateUser() {
   console.log(document.getElementById('Nombre').value);
   localStorage.setItem("skin",nombreF);
   localStorage.setItem("usuario",document.getElementById('Nombre').value);
-  /*var response=    await  fetch(`http://localhost:8081/addUser/`+document.getElementById('Numbre').value+'/'+nombreF).then((res)=>{
+  /*var response=    await  fetch(`http://20.14.146.108:8081/addUser/`+document.getElementById('Nombre').value+'/'+nombreF).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }

@@ -31,7 +31,7 @@ async function getRooms()
 }
 async function Roomsjson() 
 {
-  var response=    await  fetch(`https://lets-draw-back.herokuapp.com/rooms`).then((res)=>{
+  var response=    await  fetch(`http://20.14.146.108:8081/rooms`).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
@@ -42,7 +42,7 @@ async function Roomsjson()
 async function myFunction(x) {
     var skin = localStorage.getItem("skin");
     var nombre =localStorage.getItem("usuario");
-    var response2 = await  fetch(`https://lets-draw-back.herokuapp.com/addUser/` + nombre + '/' + skin+'/'+x).then((res) => {
+    var response2 = await  fetch(`http://20.14.146.108:8081/addUser/` + nombre + '/' + skin+'/'+x).then((res) => {
         if (!res.ok)
             throw new Error("Response is NOT ok");
         console.log(res);
