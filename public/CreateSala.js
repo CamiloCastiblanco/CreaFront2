@@ -18,5 +18,5 @@ async function CreateSala() {
     }
     );
     console.log(response2);
-    window.location.replace("20.114.249.107/Partida.html?id="+response);
+    window.location.replace("Partida.html?id="+response);
 }

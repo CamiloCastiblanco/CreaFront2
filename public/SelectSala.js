@@ -50,6 +50,6 @@ async function myFunction(x) {
         return res;
     }
     );
-  window.location.replace("20.114.249.107/Partida.html?id="+x);
+  window.location.replace("Partida.html?id="+x);
 }
 

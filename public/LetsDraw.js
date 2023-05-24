@@ -1,10 +1,10 @@
 function GoToSelectSala() {
-  window.location.replace("20.114.249.107/SelectSala.html");
+  window.location.replace("SelectSala.html");
 }
 function GoToCreateSala() {
-  window.location.replace("20.114.249.107/CreateSala.html");
+  window.location.replace("CreateSala.html");
 }
 function GoToJoinSala() {
-  window.location.replace("20.114.249.107/JoinSala.html");
+  window.location.replace("JoinSala.html");
 }
 

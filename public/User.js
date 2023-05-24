@@ -16,5 +16,5 @@ async function CreateUser() {
   );
     console.log(response);
     window.location.replace("http://localhost:3000/LetsDraw.html");*/
-    window.location.replace("20.114.249.107/LetsDraw.html");
+    window.location.replace("LetsDraw.html");
 }
