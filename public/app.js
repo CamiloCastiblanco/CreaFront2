@@ -108,7 +108,7 @@ async function myFunction() {
     const page_type = urlParams.get('id');
     document.getElementById("sala").innerText="ID sala : "+page_type;
     
-    var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
+    var response=    await  fetch(`http://20.14.146.108:8081/getRoomInfo/`+page_type).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
@@ -133,7 +133,7 @@ async function myFunction() {
    }
    changeWord();
    /*
-   var getPalabra=  await  fetch(`https://lets-draw-back.herokuapp.com/getWord/`+page_type+'/').then((rest)=>{
+   var getPalabra=  await  fetch(`http://20.14.146.108:8081/getWord/`+page_type+'/').then((rest)=>{
       if (!rest.ok) throw new Error("Response is NOT ok");
       return rest.json();
   }
@@ -197,12 +197,12 @@ async function sendMessage() {
      const urlParams = new URLSearchParams(queryString);
         const page_type = urlParams.get('id');
         var nombre =localStorage.getItem("usuario");
-        var response=    await  fetch(`https://lets-draw-back.herokuapp.com/sendMessage/`+page_type+`/`+nombre+`/`+document.getElementById("message").value+`/`).then((res)=>{
+        var response=    await  fetch(`http://20.14.146.108:8081/sendMessage/`+page_type+`/`+nombre+`/`+document.getElementById("message").value+`/`).then((res)=>{
             if (!res.ok) throw new Error("Response is NOT ok");
             return res;
         });
         document.getElementById("message").value="";
-        var responseM=    await  fetch(`https://lets-draw-back.herokuapp.com/getMessages/`+page_type+`/`).then((res)=>{
+        var responseM=    await  fetch(`http://20.14.146.108:8081/getMessages/`+page_type+`/`).then((res)=>{
             if (!res.ok) throw new Error("Response is NOT ok");
             return res.json();
         });
@@ -214,7 +214,7 @@ async function getMessages() {
     const queryString = window.location.search;
      const urlParams = new URLSearchParams(queryString);
         const page_type = urlParams.get('id');
-        var responseM=    await  fetch(`https://lets-draw-back.herokuapp.com/getMessages/`+page_type+`/`).then((res)=>{
+        var responseM=    await  fetch(`http://20.14.146.108:8081/getMessages/`+page_type+`/`).then((res)=>{
             if (!res.ok) throw new Error("Response is NOT ok");
             return res.json();
         });
@@ -242,7 +242,7 @@ async function getUsers() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-    var response = await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/` + page_type).then((res) => {
+    var response = await  fetch(`http://20.14.146.108:8081/getRoomInfo/` + page_type).then((res) => {
         if (!res.ok)
             throw new Error("Response is NOT ok");
         return res.json();
@@ -279,7 +279,7 @@ async function showRemaining() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-    var response = await  fetch(`https://lets-draw-back.herokuapp.com/getTimer/` + page_type + '/').then((res) => {
+    var response = await  fetch(`http://20.14.146.108:8081/getTimer/` + page_type + '/').then((res) => {
         return res.json();
     }
     );
@@ -290,7 +290,7 @@ async function showRemaining() {
         }
         clearInterval(canvasImage);
         clearInterval(time);
-        var stop = await  fetch(`https://lets-draw-back.herokuapp.com/stopTimer/` + page_type + '/').then((res) => {
+        var stop = await  fetch(`http://20.14.146.108:8081/stopTimer/` + page_type + '/').then((res) => {
             return res;
         }
         );
@@ -305,13 +305,13 @@ async function changeWord() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-    var getPalabra = await  fetch(`https://lets-draw-back.herokuapp.com/getWord/` + page_type + '/').then((rest) => {
+    var getPalabra = await  fetch(`http://20.14.146.108:8081/getWord/` + page_type + '/').then((rest) => {
         if (!rest.ok)
             throw new Error("Response is NOT ok");
         return rest.json();
     }
     );
-     var response=    await  fetch(`https://lets-draw-back.herokuapp.com/getRoomInfo/`+page_type).then((res)=>{
+     var response=    await  fetch(`http://20.14.146.108:8081/getRoomInfo/`+page_type).then((res)=>{
       if (!res.ok) throw new Error("Response is NOT ok");
       return res.json();
   }
@@ -341,17 +341,17 @@ async function leave() {
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
     var nombre =localStorage.getItem("usuario");
-    var response = await  fetch(`https://lets-draw-back.herokuapp.com/delUser/`+nombre+'/' + page_type + '/').then((res) => {
+    var response = await  fetch(`http://20.14.146.108:8081/delUser/`+nombre+'/' + page_type + '/').then((res) => {
         return res;
     }
     );
-    window.location.replace("https://lets-draw-front.herokuapp.com/LetsDraw.html");
+    window.location.replace("/LetsDraw.html");
 }
 async function start() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-    var start = await  fetch(`https://lets-draw-back.herokuapp.com/startTimer/` + page_type + '/').then((res) => {
+    var start = await  fetch(`http://20.14.146.108:8081/startTimer/` + page_type + '/').then((res) => {
         return res;
     }
     );
@@ -406,7 +406,7 @@ async function sendCanvas(URI){
         id: parseInt(page_type,10),
         board: newUri
     };
-    const url = 'https://lets-draw-back.herokuapp.com/setBoard';
+    const url = 'http://20.14.146.108:8081/setBoard';
 // request options
     const options = {
         method: 'POST',
@@ -424,7 +424,7 @@ async function getCanvas(){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get('id');
-    var start = await  fetch(`https://lets-draw-back.herokuapp.com/getBoard/` + page_type).then((res) => {
+    var start = await  fetch(`http://20.14.146.108:8081/getBoard/` + page_type).then((res) => {
         return res.json();
     }
     );
