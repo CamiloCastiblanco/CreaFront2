@@ -18,8 +18,7 @@ steps:
   inputs:
     SonarCloud: 'CreaSonarCloud'
     organization: 'franciscomarquez0748'
-    scannerMode: 'MSBuild'
-    projectKey: 'creaProyecto'
+    scannerMode: 'Other'
 - task: SonarCloudAnalyze@1
 - task: SonarCloudPublish@1
   inputs:
